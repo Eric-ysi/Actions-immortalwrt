@@ -75,7 +75,7 @@ kmod-rtw88-8814au
 kmod-rtw88-8821au
 
 
-kmod-rtw88-8821cu和rtl8812cu通用
+kmod-rtw88-8821cu和rtl8811cu通用
 
 
 kmod-rtw88-8822bu
