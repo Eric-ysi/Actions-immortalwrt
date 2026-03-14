@@ -10,3 +10,5 @@ echo 'src-git QModem https://github.com/FUjr/QModem' >> feeds.conf.default
 # OpenClash
 git clone --depth 1 https://github.com/vernesong/OpenClash.git OpenClash
 
+cd openwrt && rm -rf target/linux/generic/backport-6.12
+
