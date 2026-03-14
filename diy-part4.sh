@@ -11,11 +11,12 @@ echo 'src-git QModem https://github.com/FUjr/QModem' >> feeds.conf.default
 git clone --depth 1 https://github.com/vernesong/OpenClash.git OpenClash
 
 # name: Remove incompatible Realtek PHY patches
+cd "$(dirname "$0")/.."
 
-cd "$(dirname "$0")/openwrt" || cd openwrt || { echo "Error: Cannot find openwrt directory"; exit 1; }
-
-rm -f target/linux/generic/backport-6.12/793-v7.0-net-phy-realtek-fix-in-band-capabilities-for-2.5G-PH.patch
+rm -f target/linux/generic/backport-6.12/750-v7.0-net-phy-move-mmd_phy_read-and-mmd_phy_write-to-phyli.patch
+rm -f target/linux/generic/backport-6.12/793-v7.0-net-phy-realtek-add-C45-accessors-for-cl45-over-c22.patch
 rm -f target/linux/generic/backport-6.12/794-v7.0-net-phy-realtek-support-interrupt-also-for-C22-varia.patch
+rm -f target/linux/generic/backport-6.12/795-v7.0-net-phy-realtek-simplify-C22-reg-access-via-MDIO_MMD.patch
 rm -f target/linux/generic/pending-6.12/720-01-net-phy-realtek-use-genphy_soft_reset-for-2.5G-PHYs.patch
 rm -f target/linux/generic/pending-6.12/720-03-net-phy-realtek-make-sure-paged-read-is-protected-by.patch
 rm -f target/linux/generic/pending-6.12/720-04-net-phy-realtek-setup-aldps.patch
@@ -23,3 +24,5 @@ rm -f target/linux/generic/pending-6.12/720-05-net-phy-realtek-detect-early-vers
 rm -f target/linux/generic/pending-6.12/720-07-net-phy-realtek-disable-MDIO-broadcast.patch
 rm -f target/linux/generic/pending-6.12/720-07-net-phy-realtek-mark-existing-MMDs-as-present.patch
 rm -f target/linux/generic/pending-6.12/720-08-net-phy-realtek-rate-adapter-in-C22-mode.patch
+rm -f target/linux/generic/hack-6.12/400-mtd-spinand-Support-fmsh.patch
+rm -f target/linux/mediatek/patches-6.12/733-net-phy-realtek-add-led-link-select-for-RTL8221.patch
