@@ -224,11 +224,13 @@ jobs:
       with:
         tag: ${{ steps.tag.outputs.release_tag }}
         bodyFile: release.txt
-        artifacts: file_list.txt
+        artifacts: ${{ env.FIRMWARE }}/**/*
         artifactErrorsFailBuild: false
         allowUpdates: true
         draft: false
         prerelease: false
+
+
 
 
 
